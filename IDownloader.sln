@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDownloader", "IDownloader\IDownloader.csproj", "{ACDB571B-0C5C-4D0D-98CF-AA234E186963}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACDB571B-0C5C-4D0D-98CF-AA234E186963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACDB571B-0C5C-4D0D-98CF-AA234E186963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACDB571B-0C5C-4D0D-98CF-AA234E186963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACDB571B-0C5C-4D0D-98CF-AA234E186963}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D71EDE1-AD37-4BF7-A22A-C9160C38E4F6}
+	EndGlobalSection
+EndGlobal
