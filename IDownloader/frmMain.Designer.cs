@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.downloadBtn = new MaterialSkin.Controls.MaterialButton();
             this.gvVideos = new System.Windows.Forms.DataGridView();
-            this.videoNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchtxtBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.browseBtn = new MaterialSkin.Controls.MaterialButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.qualityComboBox = new System.Windows.Forms.ComboBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.videoNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvVideos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,57 +79,33 @@
             this.gvVideos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gvVideos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvVideos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvVideos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvVideos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvVideos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvVideos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numCol,
+            this.selectCol,
             this.videoNameCol,
             this.statusCol,
             this.sizeCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvVideos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvVideos.DefaultCellStyle = dataGridViewCellStyle8;
             this.gvVideos.Location = new System.Drawing.Point(12, 165);
             this.gvVideos.Name = "gvVideos";
-            this.gvVideos.ReadOnly = true;
             this.gvVideos.Size = new System.Drawing.Size(876, 286);
             this.gvVideos.TabIndex = 2;
-            // 
-            // videoNameCol
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.videoNameCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.videoNameCol.HeaderText = "Video Name";
-            this.videoNameCol.MinimumWidth = 550;
-            this.videoNameCol.Name = "videoNameCol";
-            this.videoNameCol.ReadOnly = true;
-            // 
-            // statusCol
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.statusCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.statusCol.HeaderText = "Status";
-            this.statusCol.MinimumWidth = 200;
-            this.statusCol.Name = "statusCol";
-            this.statusCol.ReadOnly = true;
-            // 
-            // sizeCol
-            // 
-            this.sizeCol.HeaderText = "Size";
-            this.sizeCol.MinimumWidth = 50;
-            this.sizeCol.Name = "sizeCol";
-            this.sizeCol.ReadOnly = true;
             // 
             // searchtxtBox
             // 
@@ -193,6 +171,54 @@
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 8;
             // 
+            // numCol
+            // 
+            this.numCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.numCol.HeaderText = "No.";
+            this.numCol.MinimumWidth = 30;
+            this.numCol.Name = "numCol";
+            this.numCol.ReadOnly = true;
+            this.numCol.Width = 30;
+            // 
+            // selectCol
+            // 
+            this.selectCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.selectCol.HeaderText = "Select";
+            this.selectCol.MinimumWidth = 45;
+            this.selectCol.Name = "selectCol";
+            this.selectCol.Width = 45;
+            // 
+            // videoNameCol
+            // 
+            this.videoNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.videoNameCol.DefaultCellStyle = dataGridViewCellStyle6;
+            this.videoNameCol.HeaderText = "Video Name";
+            this.videoNameCol.MinimumWidth = 500;
+            this.videoNameCol.Name = "videoNameCol";
+            this.videoNameCol.ReadOnly = true;
+            this.videoNameCol.Width = 500;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statusCol.DefaultCellStyle = dataGridViewCellStyle7;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.MinimumWidth = 190;
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 190;
+            // 
+            // sizeCol
+            // 
+            this.sizeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sizeCol.HeaderText = "Size";
+            this.sizeCol.MinimumWidth = 50;
+            this.sizeCol.Name = "sizeCol";
+            this.sizeCol.ReadOnly = true;
+            this.sizeCol.Width = 50;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,11 +253,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton browseBtn;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.ComboBox qualityComboBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numCol;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selectCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn videoNameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeCol;
-        private System.Windows.Forms.ComboBox qualityComboBox;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

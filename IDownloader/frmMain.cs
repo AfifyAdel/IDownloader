@@ -114,10 +114,11 @@ namespace IDownloader
                 var  Videos = Youtube.Playlists.GetVideosAsync(searchtxtBox.Text);
 
                 PlaylistVideosInfo = await Videos.BufferAsync(1000);
-
+                int count = 1;
                 foreach (var video in PlaylistVideosInfo)
                 {
-                    gvVideos.Rows.Add(video.Title, "Waiting...");
+                    gvVideos.Rows.Add(count ,true ,video.Title, "Waiting...");
+                    count++;
                 }
                 GetVideosAsync();
             }
@@ -149,21 +150,27 @@ namespace IDownloader
             try
             {
                 downloading = true;
-                int count = 0;
-                progressBar1.Maximum = PlaylistVideosInfo.Count;
+                int count = 0, selectedVideos = 0;
+                for (int i = 0; i < gvVideos.RowCount; i++) 
+                {
+                    if (Convert.ToBoolean(gvVideos.Rows[i].Cells[1].Value) == true) selectedVideos++;
+                }
+                progressBar1.Maximum = selectedVideos;
+                
                 foreach (var videoInfo in PlaylistVideosInfo)
                 {
+                    if (Convert.ToBoolean(gvVideos.Rows[count].Cells[1].Value) == false) { count++; continue; }
                     StreamManifest streamManifest = await Youtube.Videos.Streams.GetManifestAsync(videoInfo.Id);
 
-                    gvVideos.Rows[count].Cells[1].Value = "Downloading";
+                    gvVideos.Rows[count].Cells[3].Value = "Downloading";
                     var streamInfo = streamManifest.GetMuxed().FirstOrDefault(x => x.VideoQualityLabel == qualityComboBox.Text);
-                    gvVideos.Rows[count].Cells[2].Value = streamInfo.Size.ToString();
+                    gvVideos.Rows[count].Cells[4].Value = streamInfo.Size.ToString();
                     if (streamInfo != null)
                     {
                         var stream = await Youtube.Videos.Streams.GetAsync(streamInfo);
                         await Youtube.Videos.Streams.DownloadAsync(streamInfo, Path.Combine(extractPath, videoInfo.Title + '.' + streamInfo.Container));
                     }
-                    gvVideos.Rows[count].Cells[1].Value = "Done";
+                    gvVideos.Rows[count].Cells[3].Value = "Done";
                     count++;
                     progressBar1.PerformStep();
                 }

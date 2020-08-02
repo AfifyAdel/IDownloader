@@ -122,7 +122,6 @@ E:\Projects\IDownloader\IDownloader\bin\Debug\System.Text.Json.xml
 E:\Projects\IDownloader\IDownloader\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Projects\IDownloader\IDownloader\bin\Debug\System.ValueTuple.xml
 E:\Projects\IDownloader\IDownloader\bin\Debug\YoutubeExplode.xml
-E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.csprojAssemblyReference.cache
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.exe.config
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.frmMain.resources
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.Properties.Resources.resources
