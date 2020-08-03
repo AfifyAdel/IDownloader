@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YoutubeExplode;
@@ -20,10 +22,9 @@ namespace IDownloader
     {
         private YoutubeClient Youtube;
         private IReadOnlyList<YoutubeExplode.Videos.Video> PlaylistVideosInfo;
-        private MaterialSkinManager materialSkinManager;
         private string extractPath;
         private bool downloading;
-        MaterialSkinManager.Themes materialSkin;
+        private bool pause;
 
         public frmMain()
         {
@@ -35,6 +36,7 @@ namespace IDownloader
             {
                 extractPath = string.Empty;
                 downloading = false;
+                pause = false;
             }
             catch (Exception ex)
             {
@@ -164,11 +166,21 @@ namespace IDownloader
 
                     gvVideos.Rows[count].Cells[3].Value = "Downloading";
                     var streamInfo = streamManifest.GetMuxed().FirstOrDefault(x => x.VideoQualityLabel == qualityComboBox.Text);
+                    if (streamInfo == null) streamInfo = (MuxedStreamInfo)streamManifest.GetMuxed().WithHighestVideoQuality();
                     gvVideos.Rows[count].Cells[4].Value = streamInfo.Size.ToString();
                     if (streamInfo != null)
                     {
-                        var stream = await Youtube.Videos.Streams.GetAsync(streamInfo);
-                        await Youtube.Videos.Streams.DownloadAsync(streamInfo, Path.Combine(extractPath, videoInfo.Title + '.' + streamInfo.Container));
+                        try
+                        {
+                            var stream = await Youtube.Videos.Streams.GetAsync(streamInfo);
+                            await Youtube.Videos.Streams.DownloadAsync(streamInfo, Path.Combine(extractPath, videoInfo.Title + '.' + streamInfo.Container));
+                        }
+                        catch (Exception ex)
+                        {
+                            gvVideos.Rows[count].Cells[3].Value = "Failed";
+                            count++;
+                            continue;
+                        }
                     }
                     gvVideos.Rows[count].Cells[3].Value = "Done";
                     count++;
@@ -187,14 +199,27 @@ namespace IDownloader
             try
             {
                 if (downloading) return;
-                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                var dialog = new CommonOpenFileDialog();
+                dialog.IsFolderPicker = true;
+                CommonFileDialogResult result = dialog.ShowDialog();
+                if (result == CommonFileDialogResult.Ok)
                 {
-                    extractPath = folderBrowserDialog1.SelectedPath;
+                    extractPath = dialog.FileName;
                 }
             }
             catch (Exception)
             {
             }
+        }
+
+        private void pauseBtn_Click(object sender, EventArgs e)
+        {
+            pause = true;
+        }
+
+        private void resumeBtn_Click(object sender, EventArgs e)
+        {
+            pause = false;
         }
 
     }

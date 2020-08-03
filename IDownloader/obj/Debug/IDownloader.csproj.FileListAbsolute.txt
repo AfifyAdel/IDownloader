@@ -130,3 +130,13 @@ E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.csproj.CoreCompileInpu
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.csproj.CopyComplete
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.exe
 E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.pdb
+E:\Projects\IDownloader\IDownloader\obj\Debug\IDownloader.csprojAssemblyReference.cache
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.dll
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.xml
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+E:\Projects\IDownloader\IDownloader\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml

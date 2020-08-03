@@ -35,17 +35,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.downloadBtn = new MaterialSkin.Controls.MaterialButton();
             this.gvVideos = new System.Windows.Forms.DataGridView();
-            this.searchtxtBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.browseBtn = new MaterialSkin.Controls.MaterialButton();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.qualityComboBox = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.videoNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchtxtBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.browseBtn = new MaterialSkin.Controls.MaterialButton();
+            this.qualityComboBox = new System.Windows.Forms.ComboBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pauseBtn = new System.Windows.Forms.Button();
+            this.resumeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvVideos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +107,54 @@
             this.gvVideos.Name = "gvVideos";
             this.gvVideos.Size = new System.Drawing.Size(876, 286);
             this.gvVideos.TabIndex = 2;
+            // 
+            // numCol
+            // 
+            this.numCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.numCol.HeaderText = "No.";
+            this.numCol.MinimumWidth = 30;
+            this.numCol.Name = "numCol";
+            this.numCol.ReadOnly = true;
+            this.numCol.Width = 30;
+            // 
+            // selectCol
+            // 
+            this.selectCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.selectCol.HeaderText = "Select";
+            this.selectCol.MinimumWidth = 45;
+            this.selectCol.Name = "selectCol";
+            this.selectCol.Width = 45;
+            // 
+            // videoNameCol
+            // 
+            this.videoNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.videoNameCol.DefaultCellStyle = dataGridViewCellStyle6;
+            this.videoNameCol.HeaderText = "Video Name";
+            this.videoNameCol.MinimumWidth = 500;
+            this.videoNameCol.Name = "videoNameCol";
+            this.videoNameCol.ReadOnly = true;
+            this.videoNameCol.Width = 500;
+            // 
+            // statusCol
+            // 
+            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statusCol.DefaultCellStyle = dataGridViewCellStyle7;
+            this.statusCol.HeaderText = "Status";
+            this.statusCol.MinimumWidth = 190;
+            this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
+            this.statusCol.Width = 190;
+            // 
+            // sizeCol
+            // 
+            this.sizeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sizeCol.HeaderText = "Size";
+            this.sizeCol.MinimumWidth = 50;
+            this.sizeCol.Name = "sizeCol";
+            this.sizeCol.ReadOnly = true;
+            this.sizeCol.Width = 50;
             // 
             // searchtxtBox
             // 
@@ -171,59 +220,37 @@
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 8;
             // 
-            // numCol
+            // pauseBtn
             // 
-            this.numCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.numCol.HeaderText = "No.";
-            this.numCol.MinimumWidth = 30;
-            this.numCol.Name = "numCol";
-            this.numCol.ReadOnly = true;
-            this.numCol.Width = 30;
+            this.pauseBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pauseBtn.BackgroundImage")));
+            this.pauseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pauseBtn.Location = new System.Drawing.Point(12, 129);
+            this.pauseBtn.Name = "pauseBtn";
+            this.pauseBtn.Size = new System.Drawing.Size(29, 27);
+            this.pauseBtn.TabIndex = 9;
+            this.pauseBtn.UseVisualStyleBackColor = true;
+            this.pauseBtn.Visible = false;
+            this.pauseBtn.Click += new System.EventHandler(this.pauseBtn_Click);
             // 
-            // selectCol
+            // resumeBtn
             // 
-            this.selectCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.selectCol.HeaderText = "Select";
-            this.selectCol.MinimumWidth = 45;
-            this.selectCol.Name = "selectCol";
-            this.selectCol.Width = 45;
-            // 
-            // videoNameCol
-            // 
-            this.videoNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.videoNameCol.DefaultCellStyle = dataGridViewCellStyle6;
-            this.videoNameCol.HeaderText = "Video Name";
-            this.videoNameCol.MinimumWidth = 500;
-            this.videoNameCol.Name = "videoNameCol";
-            this.videoNameCol.ReadOnly = true;
-            this.videoNameCol.Width = 500;
-            // 
-            // statusCol
-            // 
-            this.statusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.statusCol.DefaultCellStyle = dataGridViewCellStyle7;
-            this.statusCol.HeaderText = "Status";
-            this.statusCol.MinimumWidth = 190;
-            this.statusCol.Name = "statusCol";
-            this.statusCol.ReadOnly = true;
-            this.statusCol.Width = 190;
-            // 
-            // sizeCol
-            // 
-            this.sizeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sizeCol.HeaderText = "Size";
-            this.sizeCol.MinimumWidth = 50;
-            this.sizeCol.Name = "sizeCol";
-            this.sizeCol.ReadOnly = true;
-            this.sizeCol.Width = 50;
+            this.resumeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resumeBtn.BackgroundImage")));
+            this.resumeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resumeBtn.Location = new System.Drawing.Point(47, 129);
+            this.resumeBtn.Name = "resumeBtn";
+            this.resumeBtn.Size = new System.Drawing.Size(29, 27);
+            this.resumeBtn.TabIndex = 10;
+            this.resumeBtn.UseVisualStyleBackColor = true;
+            this.resumeBtn.Visible = false;
+            this.resumeBtn.Click += new System.EventHandler(this.resumeBtn_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.resumeBtn);
+            this.Controls.Add(this.pauseBtn);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.qualityComboBox);
             this.Controls.Add(this.browseBtn);
@@ -252,7 +279,6 @@
         private System.Windows.Forms.TextBox searchtxtBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton browseBtn;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ComboBox qualityComboBox;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn numCol;
@@ -260,6 +286,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn videoNameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeCol;
+        private System.Windows.Forms.Button pauseBtn;
+        private System.Windows.Forms.Button resumeBtn;
     }
 }
 
