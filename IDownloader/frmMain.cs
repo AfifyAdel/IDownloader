@@ -147,6 +147,10 @@ namespace IDownloader
             {
             }
         }
+        public string RemoveInvalidChars(string filename)
+        {
+            return string.Concat(filename.Split(Path.GetInvalidFileNameChars()));
+        }
         private async Task DownloadVideosAsync()
         {
             try
@@ -173,7 +177,7 @@ namespace IDownloader
                         try
                         {
                             var stream = await Youtube.Videos.Streams.GetAsync(streamInfo);
-                            await Youtube.Videos.Streams.DownloadAsync(streamInfo, Path.Combine(extractPath, videoInfo.Title + '.' + streamInfo.Container));
+                            await Youtube.Videos.Streams.DownloadAsync(streamInfo, Path.Combine(extractPath , RemoveInvalidChars(videoInfo.Title) + '.' + streamInfo.Container));
                         }
                         catch (Exception ex)
                         {

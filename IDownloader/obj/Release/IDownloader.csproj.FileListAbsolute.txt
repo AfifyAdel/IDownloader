@@ -139,3 +139,4 @@ E:\Projects\IDownloader\IDownloader\obj\Release\IDownloader.csproj.CoreCompileIn
 E:\Projects\IDownloader\IDownloader\obj\Release\IDownloader.csproj.CopyComplete
 E:\Projects\IDownloader\IDownloader\obj\Release\IDownloader.exe
 E:\Projects\IDownloader\IDownloader\obj\Release\IDownloader.pdb
+E:\Projects\IDownloader\IDownloader\obj\Release\IDownloader.csprojAssemblyReference.cache
